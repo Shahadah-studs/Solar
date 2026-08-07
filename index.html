@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Project Solar - Voxel Engine</title>
+<title>Project Solar - Eaglercraft 1.8.8 WASM</title>
 <link rel="icon" type="image/png" href="/favicon.png?v=final">
 <style>
   body, html { margin:0; padding:0; overflow:hidden; background:#050505; font-family:sans-serif; color:#fff; }
@@ -14,8 +14,9 @@
   .hud-specs { position:absolute; bottom:15px; left:15px; background:rgba(10,10,10,0.85); border:1px solid #333; padding:10px; font-family:monospace; font-size:11px; line-height:1.4; color:#aaa; pointer-events:none; }
 </style></head><body>
 <header>
-  <div><h1>PROJECT SOLAR</h1><div class="slogan">There can be Muslims anywhere - There is a Muslim in the coding industry</div></div>
-  <div><span class="btn" style="background:#ffcc00; color:#111; font-weight:bold;">SOLAR COMPETE SYSTEM</span></div>
+  <div style="display:flex; align-items:center; gap:15px;">
+  <div><h1>PROJECT SOLAR</h1><div class="slogan">There can be Muslims anywhere - There is a Muslim in the coding industry</div></div></div>
+  <div><span class="btn" style="background:#ffcc00; color:#111; font-weight:bold;">SOLAR 1.8.8 WASM</span></div>
 </header>
 <div class="view-matrix">
   <!-- Dynamic Boot Interface Gate -->
@@ -26,7 +27,7 @@
   <iframe id="game-frame" src="" allowfullscreen></iframe>
   <div class="hud-specs">
     <span style="color:#00ff00; font-weight:bold;">// SOLAR MATRIX ARMED</span><br>
-    • Version Target: Eaglercraft WebAssembly Modern Client Architecture<br>
+    • Version Target: Eaglercraft 1.8.8 WebAssembly Stable Client Pipeline<br>
     • Storage Node: Local browser cache tracking active for singleplayer worlds<br>
     • Bandwidth Draw: 0% Vercel Cloud Network Allotment [SWjZSo]
   </div>
@@ -35,11 +36,11 @@
   function bootSolar() {
     var frame = document.getElementById("game-frame");
     var gate = document.getElementById("launcher-gate");
-    // Connects straight to the official unblocked WASM engine link you provided!
-    frame.src = "https://eaglercraft.dev";
+    // Inject the official, unblocked Eaglercraft Dev WebAssembly engine path directly
+    frame.src = "https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html";
     frame.style.display = "block";
     gate.style.display = "none";
     setTimeout(function() { frame.focus(); window.addEventListener("click", function() { frame.contentWindow.focus(); }); }, 200);
-    console.log("Project Solar client successfully triggered and deployed.");
+    console.log("Project Solar 1.8.8 WASM engine successfully initialized.");
   }
 </script></body></html>
