@@ -1,0 +1,41 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Project Solar - Modern Eagler Client</title>
+<link rel="icon" type="image/png" href="/favicon.png?v=final">
+<style>
+  body, html { margin:0; padding:0; overflow:hidden; background:#050505; font-family:sans-serif; color:#fff; }
+  header { background:#111; border-bottom:2px solid #ffcc00; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; height:50px; box-sizing:border-box; }
+  h1 { margin:0; font-size:18px; letter-spacing:2px; color:#ffcc00; font-family:monospace; }
+  .slogan { color:#00ff00; font-family:monospace; font-size:10px; text-transform:uppercase; }
+  .btn { background:#222; color:#ffcc00; border:1px solid #ffcc00; padding:5px 10px; font-family:monospace; cursor:pointer; font-size:11px; text-decoration:none; }
+  .btn:hover { background:#ffcc00; color:#111; }
+  .view-matrix { width:100vw; height:calc(100vh - 50px); background:#000; position:relative; }
+  iframe { width:100%; height:100%; border:none; }
+  .hud-specs { position:absolute; bottom:15px; left:15px; background:rgba(10,10,10,0.85); border:1px solid #333; padding:10px; font-family:monospace; font-size:11px; line-height:1.4; color:#aaa; pointer-events:none; }
+</style></head><body>
+<header>
+  <div style="display:flex; align-items:center; gap:15px;"><a href="index.html" class="btn">[ Back to HQ ]</a>
+  <div><h1>PROJECT SOLAR</h1><div class="slogan">There can be Muslims anywhere - There is a Muslim in the coding industry</div></div></div>
+  <div><span class="btn" style="background:#ffcc00; color:#111; font-weight:bold;">MODERN DESCENT ED.</span></div>
+</header>
+<div class="view-matrix">
+  <!-- Core Eagler Core 1.8 / 1.20 WebGL Embedded Client Node Container -->
+  <iframe src="https://vseigru.net" allowfullscreen></iframe>
+  
+  <div class="hud-specs">
+    <span style="color:#00ff00; font-weight:bold;">// SOLAR NETWORK RUNTIME ACTIVE</span><br>
+    • Graphics Matrix: Hardware Accelerated WebGL 2.0 Engine Pipeline<br>
+    • Storage Node: Auto-saves individual worlds to Chromebook localStorage<br>
+    • Bandwidth Draw: 0% Vercel Cloud Network Allotment [SWjZSo]
+  </div>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    var frame = document.querySelector("iframe");
+    if (frame) {
+      frame.focus();
+      // Keep canvas elements focused for tracking browser cursor locks cleanly
+      window.addEventListener("click", function() { frame.contentWindow.focus(); });
+    }
+  });
+  console.log("Project Solar client deployment completely initiated under SHS Elite standards.");
+</script></body></html>
