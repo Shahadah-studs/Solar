@@ -9,19 +9,19 @@
   .btn { background:#222; color:#ffcc00; border:1px solid #ffcc00; padding:5px 10px; font-family:monospace; cursor:pointer; font-size:11px; text-decoration:none; }
   .btn:hover { background:#ffcc00; color:#111; }
   .view-matrix { width:100vw; height:calc(100vh - 50px); background:#000; position:relative; }
-  iframe { width:100%; height:100%; border:none; display:none; }
-  .launcher-zone { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0a0a0a; border:1px solid #222; }
-  .hud-specs { position:absolute; bottom:15px; left:15px; background:rgba(10,10,10,0.85); border:1px solid #333; padding:10px; font-family:monospace; font-size:11px; line-height:1.4; color:#aaa; pointer-events:none; }
+  iframe { width:100%; height:100%; border:none; display:none; opacity:0; transition:opacity 0.5s; }
+  .launcher-zone { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0a0a0a; border:1px solid #222; z-index:10; }
+  .hud-specs { position:absolute; bottom:15px; left:15px; background:rgba(10,10,10,0.85); border:1px solid #333; padding:10px; font-family:monospace; font-size:11px; line-height:1.4; color:#aaa; pointer-events:none; z-index:5; }
 </style></head><body>
 <header>
   <div><h1>PROJECT SOLAR</h1><div class="slogan">There can be Muslims anywhere - There is a Muslim in the coding industry</div></div>
   <div><span class="btn" style="background:#ffcc00; color:#111; font-weight:bold;">SOLAR COMPETE SYSTEM</span></div>
 </header>
 <div class="view-matrix">
-  <!-- Dynamic Boot Interface Gate -->
+  <!-- Dynamic Boot Interface Gate Layout -->
   <div class="launcher-zone" id="launcher-gate">
-    <h2 style="color:#ffcc00; font-family:monospace; font-size:16px; letter-spacing:2px; margin-bottom:15px;">// READY TO LAUNCH SOLAR CORE</h2>
-    <button class="btn" onclick="bootSolar()" style="font-size:14px; padding:10px 25px;">[ START SOLAR ENGINE ]</button>
+    <h2 id="boot-title" style="color:#ffcc00; font-family:monospace; font-size:16px; letter-spacing:2px; margin-bottom:15px;">// READY TO LAUNCH SOLAR CORE</h2>
+    <button class="btn" id="action-btn" onclick="bootSolar()" style="font-size:14px; padding:10px 25px;">[ START SOLAR ENGINE ]</button>
   </div>
   <iframe id="game-frame" src="" allowfullscreen></iframe>
   <div class="hud-specs">
@@ -35,20 +35,25 @@
   function bootSolar() {
     var frame = document.getElementById("game-frame");
     var gate = document.getElementById("launcher-gate");
+    var title = document.getElementById("boot-title");
+    var btn = document.getElementById("action-btn");
     
-    // Paramètres d'écrasement brut : Nettoie tout le chargement pour n'afficher que SOLAR
-    var targetURL = "https://eaglercraft.dev";
-    var cleanParams = "?title=SOLAR&name=SOLAR&mainMenuTitle=SOLAR&loadingText=SOLAR&splash=SOLAR";
+    btn.style.display = "none";
+    title.innerText = "LOADING SOLAR CORE...";
+    title.style.color = "#00ff00";
     
-    frame.src = targetURL + cleanParams;
+    // Clean WebAssembly path connection to prevent application crashes
+    frame.src = "https://eaglercraft.dev";
     frame.style.display = "block";
-    gate.style.display = "none";
     
-    setTimeout(function() { 
-      frame.focus(); 
-      window.addEventListener("click", function() { frame.contentWindow.focus(); }); 
-    }, 200);
-    console.log("Project Solar client customized with exclusive single-token branding rules.");
+    // Controlled timing loop to bypass ChromeOS animation lag
+    setTimeout(function() {
+      gate.style.display = "none";
+      frame.style.opacity = "1";
+      frame.focus();
+      window.addEventListener("click", function() { if(frame) frame.contentWindow.focus(); });
+    }, 4000);
+    console.log("Project Solar core remastérisé appliqué avec succès.");
   }
 </script></body></html>
 
