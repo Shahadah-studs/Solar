@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Project Solar - Custom Voxel Client</title>
+<title>Project Solar - Voxel Engine</title>
 <link rel="icon" type="image/png" href="/favicon.png?v=final">
 <style>
   body, html { margin:0; padding:0; overflow:hidden; background:#050505; font-family:sans-serif; color:#fff; }
@@ -21,7 +21,7 @@
   <!-- Dynamic Boot Interface Gate -->
   <div class="launcher-zone" id="launcher-gate">
     <h2 style="color:#ffcc00; font-family:monospace; font-size:16px; letter-spacing:2px; margin-bottom:15px;">// READY TO LAUNCH SOLAR CORE</h2>
-    <button class="btn" onclick="bootSolar()" style="font-size:14px; padding:10px 25px;">[ START SOLAR ENGINE ]</button>
+    <button class="btn" onclick="bootSolar()" style="font-size:14px; padding:10px 25px;">[ START GAME ENGINE ]</button>
   </div>
   <iframe id="game-frame" src="" allowfullscreen></iframe>
   <div class="hud-specs">
@@ -35,19 +35,11 @@
   function bootSolar() {
     var frame = document.getElementById("game-frame");
     var gate = document.getElementById("launcher-gate");
-    
-    // URL Parameter Injection: Squeezing the branding variables directly past the iframe wall
-    var targetURL = "https://eaglercraft.dev";
-    var brandingParams = "?title=SOLAR%201.8.8&name=SOLAR&mainMenuTitle=SOLAR";
-    
-    frame.src = targetURL + brandingParams;
+    // Connects straight to the official unblocked WASM engine link you provided!
+    frame.src = "https://eaglercraft.dev";
     frame.style.display = "block";
     gate.style.display = "none";
-    
-    setTimeout(function() { 
-      frame.focus(); 
-      window.addEventListener("click", function() { frame.contentWindow.focus(); }); 
-    }, 200);
-    console.log("Project Solar client successfully executed with inline parameter string injection.");
+    setTimeout(function() { frame.focus(); window.addEventListener("click", function() { frame.contentWindow.focus(); }); }, 200);
+    console.log("Project Solar client successfully triggered and deployed.");
   }
 </script></body></html>
