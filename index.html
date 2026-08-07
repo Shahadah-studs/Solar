@@ -42,18 +42,19 @@
     title.innerText = "LOADING SOLAR CORE...";
     title.style.color = "#00ff00";
     
-    // Clean WebAssembly path connection to prevent application crashes
-    frame.src = "https://eaglercraft.dev";
+    // Loaded: Literal official URL path string with exact case parameters
+    frame.src = "https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html";
     frame.style.display = "block";
     
-    // Controlled timing loop to bypass ChromeOS animation lag
+    // Increased delay: Keeps original scripts covered for 8.5s until initialization is done!
     setTimeout(function() {
       gate.style.display = "none";
       frame.style.opacity = "1";
       frame.focus();
       window.addEventListener("click", function() { if(frame) frame.contentWindow.focus(); });
-    }, 4000);
-    console.log("Project Solar core remastérisé appliqué avec succès.");
+    }, 8500);
+    console.log("Project Solar core final build compiled successfully with pristine source routing.");
   }
 </script></body></html>
+
 
