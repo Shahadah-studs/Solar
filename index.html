@@ -28,7 +28,7 @@
   </div>
   <iframe id="game-frame" src="" allowfullscreen></iframe>
   <div class="hud-specs">
-    <span style="color:#00ff00; font-weight:bold;">// SOLAR MATRIX ARMED</span><br>
+    <span style="color:#00ff00; font-weight:bold;">// SOLAR MATRIX ARMED</span>br>
     • Core Selection: WebAssembly Hybrid Engine Pipeline (1.8.8 vs 1.12.2)<br>
     • Storage Node: Local browser cache tracking active for singleplayer worlds<br>
     • Bandwidth Draw: 0% Vercel Cloud Network Allotment [SWjZSo]
@@ -51,7 +51,7 @@
     
     // Loaded: Verbatim unblocked engine path strings to resolve all application errors
     var targetURL = (version === 1) ? "https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html" : "https://eaglercraft.dev/clients/Release%201.12.2%20WASM/index.html";
-    var delayTime = (version === 1) ? 9500 : 14500;
+    var delayTime = (version === 1) ? 9500 : 16000; // Recalibrated secondary target delay variable cleanly to 16000ms
     
     frame.src = targetURL;
     frame.style.display = "block";
@@ -64,4 +64,5 @@
     }, delayTime);
   }
 </script></body></html>
+
 
