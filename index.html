@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Project Solar - Eaglercraft 1.8.8 WASM</title>
+<title>SOLAR - Multi-Version Hub</title>
 <link rel="icon" type="image/png" href="/favicon.png?v=final">
 <style>
   body, html { margin:0; padding:0; overflow:hidden; background:#050505; font-family:sans-serif; color:#fff; }
@@ -15,48 +15,54 @@
 </style></head><body>
 <header>
   <div style="display:flex; align-items:center; gap:15px;"><a href="index.html" class="btn">[ Back to HQ ]</a>
-  <div><h1>PROJECT SOLAR</h1><div class="slogan">There can be Muslims anywhere - There is a Muslim in the coding industry</div></div></div>
-  <div><span class="btn" style="background:#ffcc00; color:#111; font-weight:bold;">SOLAR 1.8.8 WASM</span></div>
+  <div><h1>SOLAR</h1><div class="slogan">There can be Muslims anywhere - There is a Muslim in the coding industry</div></div></div>
+  <div><span class="btn" style="background:#ffcc00; color:#111; font-weight:bold;">SOLAR HYBRID SYSTEM</span></div>
 </header>
 <div class="view-matrix">
-  <!-- Dynamic Boot Interface Gate -->
+  <!-- Dynamic Matrix Launcher Gate -->
   <div class="launcher-zone" id="launcher-gate">
     <h2 id="boot-title" style="color:#ffcc00; font-family:monospace; font-size:16px; letter-spacing:2px; margin-bottom:15px;">// READY TO LAUNCH SOLAR CORE</h2>
-    <button class="btn" id="action-btn" onclick="bootSolar()" style="font-size:14px; padding:10px 25px;">[ START GAME ENGINE ]</button>
+    <div id="btn-container">
+      <button class="btn" onclick="showVersions()" style="font-size:14px; padding:10px 25px;">[ START SOLAR ENGINE ]</button>
+    </div>
   </div>
   <iframe id="game-frame" src="" allowfullscreen></iframe>
   <div class="hud-specs">
     <span style="color:#00ff00; font-weight:bold;">// SOLAR MATRIX ARMED</span><br>
-    • Version Target: Eaglercraft 1.8.8 WebAssembly Stable Client Pipeline<br>
+    • Core Selection: WebAssembly Hybrid Engine Pipeline (1.8.8 vs 1.12.2)<br>
     • Storage Node: Local browser cache tracking active for singleplayer worlds<br>
     • Bandwidth Draw: 0% Vercel Cloud Network Allotment [SWjZSo]
   </div>
 </div>
 <script>
-  // Block any anti-embed warning alerts from triggering an application crash
-  window.setShowEmbedWarning = function() {};
+  window.setShowEmbedWarning = function() {}; // Destroys the anti-iframe application warning crash
+  var gate = document.getElementById("launcher-gate"), title = document.getElementById("boot-title"), container = document.getElementById("btn-container");
   
-  function bootSolar() {
+  function showVersions() {
+    title.innerText = "SELECT YOUR TARGET SYSTEM LAYER:";
+    container.innerHTML = '<button class="btn" onclick="launchGame(1)" style="font-size:13px; padding:10px 20px; margin-right:10px;">[ SOLAR 1.8.8 ]</button>' +
+                          '<button class="btn" onclick="launchGame(2)" style="font-size:13px; padding:10px 20px;">[ SOLAR 1.12.2 ]</button>';
+  }
+  function launchGame(version) {
     var frame = document.getElementById("game-frame");
-    var gate = document.getElementById("launcher-gate");
-    var title = document.getElementById("boot-title");
-    
-    document.getElementById("action-btn").style.display = "none";
+    container.style.display = "none";
     title.innerText = "LOADING SOLAR INFRASTRUCTURE...";
     title.style.color = "#00ff00";
     
-    // Inject the pristine, authentic WebAssembly client source link
-    frame.src = "https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html";
+    // Loaded: Verbatim unblocked engine path strings to resolve all application errors
+    var targetURL = (version === 1) ? "https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html" : "https://eaglercraft.dev/clients/Release%201.12.2%20WASM/index.html";
+    var delayTime = (version === 1) ? 9500 : 14500;
+    
+    frame.src = targetURL;
     frame.style.display = "block";
     
-    // 9.5 Second Hiding Lock: Keeps all initial assets hidden until fully loaded
     setTimeout(function() {
       gate.style.display = "none";
       frame.style.opacity = "1";
       frame.focus();
       window.addEventListener("click", function() { if(frame) frame.contentWindow.focus(); });
-    }, 9500);
-    console.log("Project Solar engine initialized. Default assets masked successfully.");
+    }, delayTime);
   }
 </script></body></html>
+
 
